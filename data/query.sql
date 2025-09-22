@@ -1,2 +1,2 @@
 SELECT * 
-FROM transactions
+FROM features_points
