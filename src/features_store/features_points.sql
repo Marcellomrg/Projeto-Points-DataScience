@@ -1,85 +1,111 @@
+WITH tb_pontos_d AS (
 
-WITH t1 as (
     SELECT idCustomer,
 
-         CAST(max(julianday("{date}") - julianday(dtTransaction)) + 1 AS INTEGER ) AS idadeVida,
-            SUM(pointsTransaction) as SaldoD21,
-            SUM(CASE WHEN 
-            dtTransaction>=DATE("{date}","-14 day") 
-            THEN pointsTransaction 
-            ELSE 0 END) AS SaldoD14,
-            SUM(CASE WHEN 
-            dtTransaction>=DATE("{date}","-7 day") 
-            THEN pointsTransaction 
-            ELSE 0 END) AS SaldoD7,
-            SUM(CASE WHEN
-            pointsTransaction>0
-            THEN pointsTransaction
-            ELSE 0 END) AS pointsAcumuladosD21,
-            SUM(CASE WHEN
-            pointsTransaction>0
-            AND dtTransaction >= DATE("{date}","-14 day")
-            THEN pointsTransaction
-            ELSE 0 END) AS pointsAcumuladosD14,
-            SUM(CASE WHEN
-            pointsTransaction>0
-            AND dtTransaction >= DATE("{date}","-7 day")
-            THEN pointsTransaction
-            ELSE 0 END) AS pointsAcumuladosD7,  
-            SUM(CASE WHEN
-            pointsTransaction < 0
-            THEN pointsTransaction
-            ELSE 0 END) AS pointsResgatadosD21,   
-            SUM(CASE WHEN
-            pointsTransaction < 0
-            AND dtTransaction >= DATE("{date}","-14 day")
-            THEN pointsTransaction
-            ELSE 0 END) AS pointsResgatadosD14,
-            SUM(CASE WHEN
-            pointsTransaction < 0
-            AND dtTransaction >= DATE("{date}","-7 day")
-            THEN pointsTransaction
-            ELSE 0 END) AS pointsResgatadosD7   
+        SUM(pointsTransaction) AS saldoPointsD21,
+
+        SUM(CASE WHEN dtTransaction >= DATE('{date}', '-14 day')
+                        THEN pointsTransaction
+                    ELSE 0
+                END) AS saldoPointsD14,
+
+        SUM(CASE WHEN dtTransaction >= DATE('{date}', '-7 day')
+                        THEN pointsTransaction
+                    ELSE 0
+                END) AS saldoPointsD7,
+
+
+        SUM(CASE WHEN pointsTransaction > 0
+                        THEN pointsTransaction
+                    ELSE 0
+                END) AS pointsAcumuladosD21,
+
+        SUM(CASE WHEN pointsTransaction > 0
+                    AND dtTransaction >= DATE('{date}', '-14 day')
+                        THEN pointsTransaction
+                    ELSE 0
+            END) AS pointsAcumuladosD14,
+
+            SUM(CASE WHEN pointsTransaction > 0
+                    AND dtTransaction >= DATE('{date}', '-7 day')
+                        THEN pointsTransaction
+                    ELSE 0
+            END) AS pointsAcumuladosD7,
+
+
+        SUM(CASE WHEN pointsTransaction < 0
+                        THEN pointsTransaction
+                    ELSE 0
+                END) AS pointsResgatadosD21,
+
+        SUM(CASE WHEN pointsTransaction < 0
+                    AND dtTransaction >= DATE('{date}', '-14 day')
+                        THEN pointsTransaction
+                    ELSE 0
+            END) AS pointsResgatadosD14,
+
+        SUM(CASE WHEN pointsTransaction < 0
+                    AND dtTransaction >= DATE('{date}', '-7 day')
+                        THEN pointsTransaction
+                    ELSE 0
+            END) AS pointsResgatadosD7
 
 
     FROM transactions
 
-    WHERE dtTransaction < "{date}"
-    AND dtTransaction >= DATE("{date}","-21 day")
+    WHERE dtTransaction < '{date}'
+    AND dtTransaction >= DATE('{date}', '-21 day')
 
     GROUP BY idCustomer
+
 ),
+
 tb_vida AS (
-SELECT t1.*,
-        sum(t2.pointsTransaction) as saldoVida,
-        sum(CASE WHEN t2.pointsTransaction > 0 THEN t2.pointsTransaction ELSE 0 END) AS PointsAcumuladosVida,
-        sum(CASE WHEN t2.pointsTransaction < 0 THEN t2.pointsTransaction ELSE 0 END) AS PointsResgatadosVida,
-        1.0 * sum(CASE WHEN t2.pointsTransaction > 0 THEN t2.pointsTransaction ELSE 0 END)/idadeVida AS PointsDiaVida
 
-FROM t1
+    SELECT t1.idCustomer,
+            SUM(t2.pointsTransaction) AS saldoPoints,
+            SUM(CASE
+                    WHEN t2.pointsTransaction > 0
+                        THEN t2.pointsTransaction
+                    ELSE 0
+                END) AS pointsAcumuladosVida,
+            SUM(CASE
+                    WHEN t2.pointsTransaction < 0
+                        THEN t2.pointsTransaction
+                    ELSE 0
+                END) AS pointsResgatadosVida,
 
-LEFT JOIN transactions as t2 ON t1.idCustomer = t2.idCustomer
+            CAST(max(julianday('{date}') - julianday(dtTransaction)) AS INTEGER) + 1 AS diasVida
 
-WHERE t2.dtTransaction < "{date}"
+    FROM tb_pontos_d AS t1
 
-GROUP BY t1.idCustomer
+    LEFT JOIN transactions AS t2
+    ON t1.idCustomer = t2.idCustomer
+
+    WHERE t2.dtTransaction < '{date}'
+
+    GROUP BY t1.idCustomer
+
 ),
 
-tb_joins AS (
-        SELECT t1.*,
-                t2.saldoVida,
-                t2.PointsAcumuladosVida,
-                t2.PointsResgatadosVida,
-                t2.PointsDiaVida
-        
+tb_join AS (
 
+    SELECT  
+            t1.*,
+            t2.saldoPoints,
+            t2.pointsAcumuladosVida,
+            t2.pointsResgatadosVida,
+            1.0 * t2.pointsAcumuladosVida / t2.diasVida AS pointsPorDia
 
-        FROM t1
+    FROM tb_pontos_d As t1
 
-        LEFT JOIN tb_vida as t2
-        on t1.idCustomer = t2.idCustomer
+    LEFT JOIN tb_vida AS t2
+    ON t1.idCustomer = t2.idCustomer
 
 )
 
-SELECT * FROM tb_joins
 
+SELECT 
+        '{date}' AS dtRef,
+        *
+FROM tb_join

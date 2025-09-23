@@ -29,14 +29,14 @@ def ingest_date(query,table,dt):
     
     with TARGET_ENGINE.connect() as con:
         try:
-            state = f"DELETE FROM {table} WHERE dtRef = '{dt}' "
+            state = f"DELETE FROM {table} WHERE dtRef = '{dt}'; "
             con.execute(sqlalchemy.text(state))
             con.commit()
         except exc.OperationalError as err:
             print("Tabela ainda nao existe,criando ela.....")
 
-    df.to_sql(table,TARGET_ENGINE,index=False,if_exists="append")
-
+    df.to_sql(table,TARGET_ENGINE,index=False,if_exists='append')
+ 
 
 # %%
 now  = datetime.datetime.now().strftime("%Y-%m-%d")

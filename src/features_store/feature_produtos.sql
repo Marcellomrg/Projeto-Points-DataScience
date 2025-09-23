@@ -17,7 +17,7 @@ WITH tb_transactions AS (
 tb_share AS (
 
     SELECT idCustomer,
-            SUM(CASE WHEN NameProduct = "Lista de presença" THEN QuantityProduct ELSE 0 END) AS qntPresença,
+            SUM(CASE WHEN NameProduct = "Lista de presença" THEN QuantityProduct ELSE 0 END) AS qntPresenca,
             SUM(CASE WHEN NameProduct = "ChatMessage" THEN QuantityProduct ELSE 0 END) AS qntChatMessage,
             SUM(CASE WHEN NameProduct = "Cerveja" THEN QuantityProduct ELSE 0 END) AS qntCerveja,
             SUM(CASE WHEN NameProduct = "Bolo" THEN QuantityProduct ELSE 0 END) AS qntBolo,
@@ -33,7 +33,7 @@ tb_share AS (
             SUM(CASE WHEN NameProduct = "Churn_2pp" THEN QuantityProduct ELSE 0 END) AS qntChurn2pp,
             SUM(CASE WHEN NameProduct = "Churn_10pp" THEN QuantityProduct ELSE 0 END) AS qntChurn10pp,
             
-            SUM(CASE WHEN NameProduct = "Lista de presença" THEN pointsTransaction ELSE 0 END) AS PointsPresença,
+            SUM(CASE WHEN NameProduct = "Lista de presença" THEN pointsTransaction ELSE 0 END) AS PointsPresenca,
             SUM(CASE WHEN NameProduct = "ChatMessage" THEN pointsTransaction ELSE 0 END) AS PointsChatMessage,
             SUM(CASE WHEN NameProduct = "Cerveja" THEN pointsTransaction ELSE 0 END) AS PointsCerveja,
             SUM(CASE WHEN NameProduct = "Bolo" THEN pointsTransaction ELSE 0 END) AS PointsBolo,
@@ -49,7 +49,7 @@ tb_share AS (
             SUM(CASE WHEN NameProduct = "Churn_2pp" THEN pointsTransaction ELSE 0 END) AS PointsChurn2pp,
             SUM(CASE WHEN NameProduct = "Churn_10pp" THEN pointsTransaction ELSE 0 END) AS PointsChurn10pp,
 
-            1.0 * SUM(CASE WHEN NameProduct = "Lista de presença" THEN QuantityProduct ELSE 0 END)/SUM(QuantityProduct) AS pctPresença,
+            1.0 * SUM(CASE WHEN NameProduct = "Lista de presença" THEN QuantityProduct ELSE 0 END)/SUM(QuantityProduct) AS pctPresenca,
             1.0 * SUM(CASE WHEN NameProduct = "ChatMessage" THEN QuantityProduct ELSE 0 END)/SUM(QuantityProduct) AS pctChatMessage,
             1.0 * SUM(CASE WHEN NameProduct = "Cerveja" THEN QuantityProduct ELSE 0 END)/SUM(QuantityProduct) AS pctCerveja,
             1.0 * SUM(CASE WHEN NameProduct = "Bolo" THEN QuantityProduct ELSE 0 END)/SUM(QuantityProduct) AS pctBolo,
