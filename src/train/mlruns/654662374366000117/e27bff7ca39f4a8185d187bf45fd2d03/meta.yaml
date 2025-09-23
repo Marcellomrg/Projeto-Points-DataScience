@@ -1,0 +1,14 @@
+artifact_uri: file:///j:/ws-python/DataScience-points/src/train/mlruns/654662374366000117/e27bff7ca39f4a8185d187bf45fd2d03/artifacts
+end_time: 1758638794427
+entry_point_name: ''
+experiment_id: '654662374366000117'
+lifecycle_stage: active
+run_id: e27bff7ca39f4a8185d187bf45fd2d03
+run_name: dashing-dog-166
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758638636564
+status: 4
+tags: []
+user_id: Marce

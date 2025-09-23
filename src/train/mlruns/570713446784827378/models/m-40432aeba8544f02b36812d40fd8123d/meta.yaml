@@ -1,0 +1,10 @@
+artifact_location: file:///j:/ws-python/DataScience-points/src/train/mlruns/570713446784827378/models/m-40432aeba8544f02b36812d40fd8123d/artifacts
+creation_timestamp: 1758637915702
+experiment_id: '570713446784827378'
+last_updated_timestamp: 1758637928677
+model_id: m-40432aeba8544f02b36812d40fd8123d
+model_type: null
+name: model
+source_run_id: 05aa48a5ab834b86ac076711f531fa4e
+status: 2
+status_message: null

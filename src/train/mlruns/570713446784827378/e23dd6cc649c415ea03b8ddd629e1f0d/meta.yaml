@@ -1,0 +1,14 @@
+artifact_uri: file:///j:/ws-python/DataScience-points/src/train/mlruns/570713446784827378/e23dd6cc649c415ea03b8ddd629e1f0d/artifacts
+end_time: 1758639232375
+entry_point_name: ''
+experiment_id: '570713446784827378'
+lifecycle_stage: active
+run_id: e23dd6cc649c415ea03b8ddd629e1f0d
+run_name: nervous-moose-152
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758639138764
+status: 4
+tags: []
+user_id: Marce

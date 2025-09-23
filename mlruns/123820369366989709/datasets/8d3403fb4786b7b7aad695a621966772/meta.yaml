@@ -1,0 +1,69 @@
+digest: f2149457
+name: dataset
+profile: '{"num_rows": 317, "num_elements": 27262}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "qtdPointsManha", "required":
+  true}, {"type": "long", "name": "qtdPointsTarde", "required": true}, {"type": "long",
+  "name": "qtdPointsNoite", "required": true}, {"type": "double", "name": "pctPointsManha",
+  "required": true}, {"type": "double", "name": "pctPointsTarde", "required": true},
+  {"type": "double", "name": "pctPointsNoite", "required": true}, {"type": "long",
+  "name": "qtdTransacoesManha", "required": true}, {"type": "long", "name": "qtdTransacoesTarde",
+  "required": true}, {"type": "long", "name": "qtdTransacoesNoite", "required": true},
+  {"type": "double", "name": "pctTransacoesManha", "required": true}, {"type": "double",
+  "name": "pctTransacoesTarde", "required": true}, {"type": "double", "name": "pctTransacoesNoite",
+  "required": true}, {"type": "long", "name": "qntPresenca", "required": true}, {"type":
+  "long", "name": "qntChatMessage", "required": true}, {"type": "long", "name": "qntCerveja",
+  "required": true}, {"type": "long", "name": "qntBolo", "required": true}, {"type":
+  "long", "name": "qntBatata", "required": true}, {"type": "long", "name": "qntTorta",
+  "required": true}, {"type": "long", "name": "qntCocaCola", "required": true}, {"type":
+  "long", "name": "qntPonei", "required": true}, {"type": "long", "name": "qntStreamElements",
+  "required": true}, {"type": "long", "name": "qntStreak", "required": true}, {"type":
+  "long", "name": "qntAirLover", "required": true}, {"type": "long", "name": "qntRLover",
+  "required": true}, {"type": "long", "name": "qntChurn5pp", "required": true}, {"type":
+  "long", "name": "qntChurn2pp", "required": true}, {"type": "long", "name": "qntChurn10pp",
+  "required": true}, {"type": "long", "name": "PointsPresenca", "required": true},
+  {"type": "long", "name": "PointsChatMessage", "required": true}, {"type": "long",
+  "name": "PointsCerveja", "required": true}, {"type": "long", "name": "PointsBolo",
+  "required": true}, {"type": "long", "name": "PointsBatata", "required": true}, {"type":
+  "long", "name": "PointsTorta", "required": true}, {"type": "long", "name": "PointsCocaCola",
+  "required": true}, {"type": "long", "name": "PointsPonei", "required": true}, {"type":
+  "long", "name": "PointsStreamElements", "required": true}, {"type": "long", "name":
+  "PointsStreak", "required": true}, {"type": "long", "name": "PointsAirLover", "required":
+  true}, {"type": "long", "name": "PointsRLover", "required": true}, {"type": "long",
+  "name": "PointsChurn5pp", "required": true}, {"type": "long", "name": "PointsChurn2pp",
+  "required": true}, {"type": "long", "name": "PointsChurn10pp", "required": true},
+  {"type": "double", "name": "pctPresenca", "required": true}, {"type": "double",
+  "name": "pctChatMessage", "required": true}, {"type": "double", "name": "pctCerveja",
+  "required": true}, {"type": "double", "name": "pctBolo", "required": true}, {"type":
+  "double", "name": "pctBatata", "required": true}, {"type": "double", "name": "pctTorta",
+  "required": true}, {"type": "double", "name": "pctCocaCola", "required": true},
+  {"type": "double", "name": "pctPonei", "required": true}, {"type": "double", "name":
+  "pctStreamElements", "required": true}, {"type": "double", "name": "pctStreak",
+  "required": true}, {"type": "double", "name": "pctAirLover", "required": true},
+  {"type": "double", "name": "pctRLover", "required": true}, {"type": "double", "name":
+  "pctChurn5pp", "required": true}, {"type": "double", "name": "pctChurn2pp", "required":
+  true}, {"type": "double", "name": "pctChurn10pp", "required": true}, {"type": "double",
+  "name": "AvgChatLive", "required": true}, {"type": "string", "name": "productmax",
+  "required": true}, {"type": "long", "name": "qtdDiasD21", "required": true}, {"type":
+  "long", "name": "qtdDiasD14", "required": true}, {"type": "long", "name": "qtdDiasD7",
+  "required": true}, {"type": "double", "name": "AVgLiveMinutes", "required": true},
+  {"type": "double", "name": "sumLiveMinutes", "required": true}, {"type": "double",
+  "name": "minLiveMinutes", "required": true}, {"type": "double", "name": "maxLiveMinutes",
+  "required": true}, {"type": "long", "name": "qtdTransacoesVida", "required": true},
+  {"type": "double", "name": "AvgTransacaoDia", "required": true}, {"type": "long",
+  "name": "Recencia", "required": true}, {"type": "long", "name": "freqDias", "required":
+  true}, {"type": "long", "name": "Valorpoints", "required": true}, {"type": "long",
+  "name": "idadeBase", "required": true}, {"type": "long", "name": "flEmail", "required":
+  true}, {"type": "string", "name": "saldoPointsD21", "required": true}, {"type":
+  "string", "name": "saldoPointsD14", "required": true}, {"type": "string", "name":
+  "saldoPointsD7", "required": true}, {"type": "string", "name": "pointsAcumuladosD21",
+  "required": true}, {"type": "string", "name": "pointsAcumuladosD14", "required":
+  true}, {"type": "string", "name": "pointsAcumuladosD7", "required": true}, {"type":
+  "string", "name": "pointsResgatadosD21", "required": true}, {"type": "string", "name":
+  "pointsResgatadosD14", "required": true}, {"type": "string", "name": "pointsResgatadosD7",
+  "required": true}, {"type": "string", "name": "saldoPoints", "required": true},
+  {"type": "string", "name": "pointsAcumuladosVida", "required": true}, {"type": "string",
+  "name": "pointsResgatadosVida", "required": true}, {"type": "string", "name": "pointsPorDia",
+  "required": true}]}'
+source: '{"tags": {"mlflow.user": "Marce", "mlflow.source.name": "j:\\anaconda_py\\Lib\\site-packages\\ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

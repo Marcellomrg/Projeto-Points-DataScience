@@ -1,0 +1,14 @@
+artifact_uri: file:///j:/ws-python/DataScience-points/src/train/mlruns/570713446784827378/2960955921a14970886907ed249e042f/artifacts
+end_time: 1758638980645
+entry_point_name: ''
+experiment_id: '570713446784827378'
+lifecycle_stage: active
+run_id: 2960955921a14970886907ed249e042f
+run_name: intelligent-ox-139
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758638843108
+status: 4
+tags: []
+user_id: Marce

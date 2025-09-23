@@ -1,0 +1,14 @@
+artifact_uri: file:///j:/ws-python/DataScience-points/src/train/mlruns/654662374366000117/36b4aff47cac44fb86096f3e270e0db4/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '654662374366000117'
+lifecycle_stage: active
+run_id: 36b4aff47cac44fb86096f3e270e0db4
+run_name: treasured-duck-780
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758636612739
+status: 1
+tags: []
+user_id: Marce

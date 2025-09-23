@@ -1,0 +1,14 @@
+artifact_uri: file:///j:/ws-python/DataScience-points/src/train/mlruns/126586882861125730/f2b5c7b9606341268fc013a54ca72a7f/artifacts
+end_time: 1758640311688
+entry_point_name: ''
+experiment_id: '126586882861125730'
+lifecycle_stage: active
+run_id: f2b5c7b9606341268fc013a54ca72a7f
+run_name: mercurial-sponge-53
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758639292768
+status: 3
+tags: []
+user_id: Marce

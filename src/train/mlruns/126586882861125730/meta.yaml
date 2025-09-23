@@ -1,0 +1,6 @@
+artifact_location: file:///j:/ws-python/DataScience-points/src/train/mlruns/126586882861125730
+creation_time: 1758639245122
+experiment_id: '126586882861125730'
+last_update_time: 1758639245122
+lifecycle_stage: active
+name: churn_exp

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/123820369366989709/8cf465f2ef99483d82d2d343b92ffee2/artifacts
+end_time: 1758646151503
+entry_point_name: ''
+experiment_id: '123820369366989709'
+lifecycle_stage: active
+run_id: 8cf465f2ef99483d82d2d343b92ffee2
+run_name: debonair-calf-239
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758645142307
+status: 3
+tags: []
+user_id: Marce

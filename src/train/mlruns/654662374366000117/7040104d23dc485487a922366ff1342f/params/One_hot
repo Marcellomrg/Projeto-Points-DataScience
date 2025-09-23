@@ -1,0 +1,8 @@
+OneHotEncoder(drop_last=True,
+              variables=['productmax', 'saldoPointsD21', 'saldoPointsD14',
+                         'saldoPointsD7', 'pointsAcumuladosD21',
+                         'pointsAcumuladosD14', 'pointsAcumuladosD7',
+                         'pointsResgatadosD21', 'pointsResgatadosD14',
+                         'pointsResgatadosD7', 'saldoPoints',
+                         'pointsAcumuladosVida', 'pointsResgatadosVida',
+                         'pointsPorDia'])

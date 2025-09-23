@@ -1,0 +1,14 @@
+artifact_uri: file:///j:/ws-python/DataScience-points/src/train/mlruns/570713446784827378/05aa48a5ab834b86ac076711f531fa4e/artifacts
+end_time: 1758638419668
+entry_point_name: ''
+experiment_id: '570713446784827378'
+lifecycle_stage: active
+run_id: 05aa48a5ab834b86ac076711f531fa4e
+run_name: skillful-panda-369
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1758637645125
+status: 4
+tags: []
+user_id: Marce
